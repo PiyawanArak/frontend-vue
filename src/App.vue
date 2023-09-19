@@ -14,6 +14,11 @@
       <v-btn text @click='goToLogin()'>
         เข้าสู่ระบบ
       </v-btn>
+
+      <v-btn text @click='goToManage()'>
+        จัดการข้อมูล
+      </v-btn>
+
     </v-app-bar>
 
     <v-main>
@@ -31,7 +36,10 @@ export default {
   }),
   methods: {
     goToLogin () {
-      this.$router.push('/login')
+      this.$router.push({path: '/login'}).catch(()=>{})
+    },
+    goToManage() {
+      this.$router.push({path: '/manageTable'}).catch(()=>{})
     }
   }
 }
