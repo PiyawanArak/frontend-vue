@@ -148,7 +148,7 @@ export default {
         save(action) {
 
             if (action === 'เพิ่มข้อมูล') {
-                this.desserts.push(this.editItem)
+                this.desserts.push(this.editedItem)
             }else{
                 Object.assign(this.desserts[this.editItemIndex], this.editedItem)
             }
