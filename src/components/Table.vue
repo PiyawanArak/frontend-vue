@@ -145,15 +145,44 @@ export default {
                 protein: 0,
             }
         },
-        save(action) {
+        async save(action) {
 
             if (action === 'เพิ่มข้อมูล') {
-                this.desserts.push(this.editedItem)
-            }else{
-                Object.assign(this.desserts[this.editItemIndex], this.editedItem)
+<<<<<<< Lab9
+                // this.desserts.push(this.editedItem)
+                var data = {
+                    firstname: this.firstname,
+                    lastname: this.lastname,
+                    salary: this.salary,
+                    role: {
+                        name: this.role
+                    },
+                    skills: [{ skill: '' }]
+                }
+                console.log('data after send ==>', data);
+                try {
+                    var dataRespnse = await this.axios.post('http://localhost:9000/employee', data)
+                    // console.log('dataResponse ==>', dataRespnse);
+                    this.close()
+                    this.initialize()
+
+                } catch (error) {
+                    console.log(error.message);
+                }
+            } else {
+                try {
+                    var dataRespnseEdit = await this.axios.put('http://localhost:9000/employee/' + this.idEmployee, data)
+                    console.log('dataResponse ==>', dataRespnseEdit);
+                    this.close()
+                    this.initialize()
+
+                } catch (error) {
+                    console.log(error.message);
+                }
+
             }
-                this.close()
-            
+
+
         },
         openDialog(Action, item) {
             // console.log(Action, item);
