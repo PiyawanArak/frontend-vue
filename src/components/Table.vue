@@ -158,8 +158,6 @@ export default {
         async save(action) {
 
             if (action === 'เพิ่มข้อมูล') {
-
-
                 // this.desserts.push(this.editedItem)
                 var data = {
                     firstname: this.firstname,
@@ -190,7 +188,6 @@ export default {
                 } catch (error) {
                     console.log(error.message);
                 }
-
             }
 
 
