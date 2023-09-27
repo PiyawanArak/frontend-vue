@@ -11,6 +11,9 @@
 
       <v-spacer></v-spacer>
 
+      <v-btn text @click='goToStudent()'>
+        Connect Backend
+      </v-btn>
       <v-btn text @click='goToLogin()'>
         เข้าสู่ระบบ
       </v-btn>
@@ -35,11 +38,15 @@ export default {
   data: () => ({
   }),
   methods: {
-    goToLogin () {
-      this.$router.push({path: '/login'}).catch(()=>{})
+    goToLogin() {
+      this.$router.push({ path: '/login' }).catch(() => { })
     },
     goToManage() {
-      this.$router.push({path: '/manageTable'}).catch(()=>{})
+      this.$router.push({ path: '/manageTable' }).catch(() => { })
+    },
+    goToStudent () {
+      this.$router.push({ path: '/student' }).catch(() => { })
+
     }
   }
 }
